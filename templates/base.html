@@ -9,9 +9,18 @@
 <body>
     <main class="page">
         <header class="site-header">
-            <div>
-                <h1>Revision Notes</h1>
-                <p>A tiny Flask CRUD app for OCR A-Level Computer Science.</p>
+            <div class="site-brand">
+                <!--
+                    Flask serves files in /static/ as public URLs.
+                    url_for('static', ...) builds the correct path so the
+                    browser can request the image over HTTP.
+                -->
+                <img src="{{ url_for('static', filename='img/logo.png') }}"
+                     alt="Skeletor logo" class="logo">
+                <div>
+                    <h1>Revision Notes</h1>
+                    <p>A tiny Flask CRUD app for OCR A-Level Computer Science.</p>
+                </div>
             </div>
             <a class="button" href="{{ url_for('add') }}">Add note</a>
         </header>

@@ -19,6 +19,23 @@ body {
     margin-bottom: 2rem;
 }
 
+/* Groups the logo and title text side by side */
+.site-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/*
+ * Static files (images, CSS, JS) live in /static/ so Flask can serve them
+ * separately from templates.  The browser fetches each asset with its own
+ * HTTP GET request.
+ */
+.logo {
+    height: 40px;
+    width: auto;
+}
+
 .site-header h1,
 .site-header p {
     margin: 0;
