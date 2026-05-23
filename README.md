@@ -1,6 +1,6 @@
 # skeletor
 
-This project is a tiny full-stack Flask app for OCR A-Level Computer Science students. It uses HTML forms, Jinja templates, Flask routes, JavaScript, and SQLite to create, read, update, and delete revision notes.
+This project is a tiny full-stack Flask app for OCR A-Level Computer Science students. It uses HTML forms, Jinja templates, Flask routes, JavaScript, and SQLite to create, read, update, and delete notes.
 
 ## Install Flask
 
@@ -36,6 +36,21 @@ Then open `http://127.0.0.1:5000`.
 - `/templates/add.html` - form for inserting a new note
 - `/templates/edit.html` - form for updating an existing note
 - `/README.md` - setup instructions and concept mapping
+
+## JavaScript in `static/script.js`
+
+Students should use `script.js` to learn these browser-side ideas:
+
+- selecting elements from the DOM with `document.querySelectorAll()`
+- looping through matching elements with a `for...of` loop
+- adding an event listener with `addEventListener()`
+- handling a `submit` event from a form
+- using `window.confirm()` to ask the user to confirm an action
+- using `event.preventDefault()` to stop the browser sending a form
+- understanding that JavaScript runs in the browser, while Flask runs on the server
+- understanding that client-side behaviour can improve usability, but server-side validation is still essential
+
+The script only confirms deletions. It does not replace Flask validation and it does not add extra interface features.
 
 ## Static assets and the logo
 
