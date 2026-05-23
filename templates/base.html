@@ -9,10 +9,14 @@
 <body>
     <main class="page">
         <header class="site-header">
-            <div>
-                <h1>Revision Notes</h1>
-                <p>A tiny Flask CRUD app for OCR A-Level Computer Science.</p>
-            </div>
+            <a class="brand" href="{{ url_for('index') }}">
+                <!-- Static files stay in /static so Flask can serve /static/... when the browser requests this image URL. -->
+                <img class="site-logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="Skeletor logo">
+                <div class="brand-text">
+                    <h1>Revision Notes</h1>
+                    <p>A tiny Flask CRUD app for OCR A-Level Computer Science.</p>
+                </div>
+            </a>
             <a class="button" href="{{ url_for('add') }}">Add note</a>
         </header>
         {% block content %}{% endblock %}
