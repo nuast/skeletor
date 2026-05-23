@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #1f2933;
+}
+
+.page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem 3rem;
+}
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.site-header h1,
+.site-header p {
+    margin: 0;
+}
+
+.button,
+button {
+    display: inline-block;
+    border: 0;
+    border-radius: 0.5rem;
+    background: #2563eb;
+    color: #fff;
+    padding: 0.7rem 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    font: inherit;
+}
+
+.button.secondary {
+    background: #52606d;
+}
+
+.button.danger,
+button.danger {
+    background: #c81e1e;
+}
+
+.card,
+.note-form {
+    background: #fff;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
+}
+
+.card-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.note-meta {
+    color: #52606d;
+    margin: 0.25rem 0 0.75rem;
+}
+
+.note-content {
+    white-space: pre-wrap;
+}
+
+.actions {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-top: 0.75rem;
+}
+
+input,
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 0.35rem;
+    padding: 0.7rem;
+    border: 1px solid #cbd2d9;
+    border-radius: 0.5rem;
+    font: inherit;
+}
+
+textarea {
+    min-height: 10rem;
+    resize: vertical;
+}
+
+.error {
+    color: #c81e1e;
+    font-weight: bold;
+}
+
+.delete-form {
+    margin: 0;
+}
+
+.empty-state {
+    text-align: center;
+}

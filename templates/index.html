@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Revision Notes{% endblock %}
+
+{% block content %}
+    {% if notes %}
+        <section class="card-list">
+            {% for note in notes %}
+                <article class="card">
+                    <h2>{{ note.title }}</h2>
+                    <p class="note-meta">Topic: {{ note.topic }}</p>
+                    <p class="note-content">{{ note.content }}</p>
+                    <div class="actions">
+                        <a class="button secondary" href="{{ url_for('edit', note_id=note.id) }}">Edit</a>
+                        <form class="delete-form" action="{{ url_for('delete', note_id=note.id) }}" method="post">
+                            <button class="danger" type="submit">Delete</button>
+                        </form>
+                    </div>
+                </article>
+            {% endfor %}
+        </section>
+    {% else %}
+        <section class="card empty-state">
+            <h2>No notes yet</h2>
+            <p>Add your first note to see data move from the browser to Flask, then into SQLite.</p>
+        </section>
+    {% endif %}
+{% endblock %}
