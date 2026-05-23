@@ -30,11 +30,19 @@ Then open `http://127.0.0.1:5000`.
 - `/schema.sql` - SQL to create the single `notes` table
 - `/static/style.css` - simple page styling
 - `/static/script.js` - small client-side JavaScript to confirm deletes
+- `/static/img/logo.png` - logo image file requested by the browser on each page
 - `/templates/base.html` - shared page layout used by all templates
 - `/templates/index.html` - shows notes read from the database
 - `/templates/add.html` - form for inserting a new note
 - `/templates/edit.html` - form for updating an existing note
 - `/README.md` - setup instructions and concept mapping
+
+## Static assets and the logo
+
+- Static assets are files such as CSS, JavaScript, and images that are sent to the browser as files instead of being rendered as templates.
+- Images belong in `/static` so they can be requested directly by URL (for example `/static/img/logo.png`).
+- Flask serves files in the `static` folder automatically, so templates can link to them with `url_for('static', filename='...')`.
+- The logo is rendered in `templates/base.html` with `<img src="{{ url_for('static', filename='img/logo.png') }}">`, so it appears on every page that extends `base.html`.
 
 ## OCR A-Level Computer Science links
 
