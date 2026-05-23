@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Revision Notes{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="page">
+        <header class="site-header">
+            <div>
+                <h1>Revision Notes</h1>
+                <p>A tiny Flask CRUD app for OCR A-Level Computer Science.</p>
+            </div>
+            <a class="button" href="{{ url_for('add') }}">Add note</a>
+        </header>
+        {% block content %}{% endblock %}
+    </main>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

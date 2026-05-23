@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Add Note{% endblock %}
+
+{% block content %}
+    <form class="note-form" action="{{ url_for('add') }}" method="post">
+        <h2>Add a note</h2>
+        <p>Submitting this form sends a POST request to Flask, which validates the data and inserts a new SQLite record.</p>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        <label for="title">Title</label>
+        <input id="title" name="title" required value="{{ form.title }}">
+
+        <label for="topic">Topic</label>
+        <input id="topic" name="topic" required value="{{ form.topic }}">
+
+        <label for="content">Content</label>
+        <textarea id="content" name="content" required>{{ form.content }}</textarea>
+
+        <div class="actions">
+            <button type="submit">Save note</button>
+            <a class="button secondary" href="{{ url_for('index') }}">Cancel</a>
+        </div>
+    </form>
+{% endblock %}
