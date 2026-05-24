@@ -109,6 +109,12 @@ def delete(note_id):
     return redirect(url_for("index"))
 
 
+@app.cli.command("init-db")
+def init_db_command():
+    init_db()
+    print("Database initialised.")
+
+
 if not app.config["DATABASE"].exists():
     init_db()
 
