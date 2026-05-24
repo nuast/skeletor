@@ -23,6 +23,11 @@
         <section class="card empty-state">
             <h2>No notes yet</h2>
             <p>Add your first note to see data move from the browser to Flask, then into SQLite.</p>
+            <ul>
+                <li>The browser sends a POST request with your form data</li>
+                <li>Flask validates the data and inserts a row into SQLite</li>
+                <li>Flask redirects you back here to display the updated list</li>
+            </ul>
         </section>
     {% endif %}
 {% endblock %}
