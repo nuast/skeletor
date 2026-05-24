@@ -10,15 +10,17 @@
             <p class="error">{{ error }}</p>
         {% endif %}
         <label for="title">Title</label>
-        <input id="title" name="title" required value="{{ form.title }}">
+        <input id="title" name="title" type="text" required value="{{ form.title }}">
 
         <label for="topic">Topic</label>
-        <input id="topic" name="topic" required value="{{ form.topic }}">
+        <input id="topic" name="topic" type="text" required value="{{ form.topic }}">
 
         <label for="content">Content</label>
         <textarea id="content" name="content" required>{{ form.content }}</textarea>
 
         <div class="actions">
+            <!-- <input type="submit" value="Save note"> would also work here.
+                 <button type="submit"> is the modern equivalent and allows richer content. -->
             <button type="submit">Save note</button>
             <a class="button secondary" href="{{ url_for('index') }}">Cancel</a>
         </div>
