@@ -1,118 +1,159 @@
+/* CSS is kept in a separate file so the HTML can focus on structure and content. */
+
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f7fb;
+    padding: 0;
+    background-color: #f5f7fb;
     color: #1f2933;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+/* Selectors choose which HTML elements or classes these rules apply to. */
+h1,
+h2,
+p {
+    margin-top: 0;
+}
+
+main {
+    display: block;
 }
 
 .page {
     max-width: 900px;
-    margin: 0 auto;
-    padding: 2rem 1rem 3rem;
+    margin-top: 0;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
+    padding-top: 32px;
+    padding-right: 16px;
+    padding-bottom: 48px;
+    padding-left: 16px;
 }
 
 .site-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 32px;
 }
 
 .brand {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    color: inherit;
+    color: #1f2933;
     text-decoration: none;
 }
 
 .site-logo {
-    height: 3rem;
+    height: 48px;
     width: auto;
+    margin-right: 12px;
 }
 
-.brand-text h1,
 .brand-text p {
-    margin: 0;
+    margin-bottom: 0;
 }
 
+/* Reusable classes let one style be used on links, buttons, or sections in several places. */
 .button,
 button {
     display: inline-block;
-    border: 0;
-    border-radius: 0.5rem;
-    background: #2563eb;
-    color: #fff;
-    padding: 0.7rem 1rem;
+    background-color: #2563eb;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    padding-top: 10px;
+    padding-right: 16px;
+    padding-bottom: 10px;
+    padding-left: 16px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #2563eb;
     text-decoration: none;
     cursor: pointer;
-    font: inherit;
 }
 
 .button.secondary {
-    background: #52606d;
+    background-color: #52606d;
+    border-color: #52606d;
 }
 
-.button.danger,
-button.danger {
-    background: #c81e1e;
+button.danger,
+.button.danger {
+    background-color: #c81e1e;
+    border-color: #c81e1e;
 }
 
 .card,
 .note-form {
-    background: #fff;
-    border-radius: 0.75rem;
-    padding: 1rem;
-    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
+    background-color: #ffffff;
+    padding-top: 16px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    margin-bottom: 16px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #cbd2d9;
 }
 
 .card-list {
-    display: grid;
-    gap: 1rem;
+    margin: 0;
+    padding: 0;
 }
 
 .note-meta {
     color: #52606d;
-    margin: 0.25rem 0 0.75rem;
+    font-size: 14px;
+    margin-top: 8px;
+    margin-bottom: 12px;
 }
 
 .note-content {
+    margin-bottom: 0;
     white-space: pre-wrap;
 }
 
 .actions {
     display: flex;
-    gap: 0.75rem;
     align-items: center;
-    margin-top: 1rem;
+    gap: 12px;
+    margin-top: 16px;
 }
 
-form label {
+label {
     display: block;
-    font-weight: bold;
-    margin-top: 0.75rem;
+    margin-top: 12px;
+    margin-bottom: 4px;
+    font-size: 16px;
 }
 
 input,
 textarea {
     width: 100%;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    margin-bottom: 8px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #cbd2d9;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
     box-sizing: border-box;
-    margin-top: 0.35rem;
-    padding: 0.7rem;
-    border: 1px solid #cbd2d9;
-    border-radius: 0.5rem;
-    font: inherit;
 }
 
 textarea {
-    min-height: 10rem;
-    resize: vertical;
+    height: 160px;
 }
 
 .error {
     color: #c81e1e;
-    font-weight: bold;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 .delete-form {
