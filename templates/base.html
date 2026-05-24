@@ -17,7 +17,9 @@
                     <p>A tiny Flask CRUD app for OCR A-Level Computer Science.</p>
                 </div>
             </a>
+            {% if request.endpoint not in ('add', 'edit') %}
             <a class="button" href="{{ url_for('add') }}">Add note</a>
+            {% endif %}
         </header>
         {% block content %}{% endblock %}
     </main>
