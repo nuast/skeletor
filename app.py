@@ -18,7 +18,7 @@ def get_db():
 
 def init_db():
     with sqlite3.connect(app.config["DATABASE"]) as connection:
-        with open(BASE_DIR / "schema.sql", encoding="utf-8") as schema_file:
+        with open(BASE_DIR / "schema.sql") as schema_file:
             connection.executescript(schema_file.read())
 
 
@@ -104,7 +104,6 @@ def edit(note_id):
 
 @app.route("/delete/<int:note_id>", methods=["POST"])
 def delete(note_id):
-    get_note(note_id)
     get_db().execute("DELETE FROM notes WHERE id = ?", (note_id,))
     get_db().commit()
     return redirect(url_for("index"))
