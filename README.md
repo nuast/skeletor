@@ -52,6 +52,24 @@ Students should use `script.js` to learn these browser-side ideas:
 
 The script only confirms deletions. It does not replace Flask validation and it does not add extra interface features.
 
+## CSS in `static/style.css`
+
+Students should use `style.css` to identify these CSS ideas:
+
+- **element selectors** such as `body`, `label`, `input`, and `textarea`
+- **class selectors** such as `.page`, `.button`, `.card`, and `.note-form`
+- **grouped selectors** such as `h1, h2, p` and `.button, button`
+- **colour and presentation properties** including `color` and `background-color`
+- **text styling properties** including `font-family` and `font-size`
+- **box model properties** including `width`, `height`, `padding`, `margin`, and `max-width`
+- **border properties** including `border-style`, `border-width`, and `border-color`
+
+CSS is separated from HTML so that the HTML can describe the structure and content of the page, while the CSS controls how that content is presented in the browser.
+
+This means the appearance of the page can be changed without changing the actual text, form fields, links, or page structure.
+
+The stylesheet in this project is deliberately simple so students can match visible parts of the interface to the CSS rules that control them.
+
 ## Static assets and the logo
 
 - Static assets are files such as CSS, JavaScript, and images that are sent to the browser as files instead of being rendered as templates.
