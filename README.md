@@ -1,91 +1,177 @@
-# skeletor
+# Skeletor
 
-This project is a tiny full-stack Flask app for OCR A-Level Computer Science students. It uses HTML forms, Jinja templates, Flask routes, JavaScript, and SQLite to create, read, update, and delete notes.
+A bare-bones full-stack web app skeleton for OCR A-Level Computer Science students.
 
-## Install Flask
+It uses **HTML**, **CSS**, **JavaScript**, **Flask**, **Jinja**, and **SQLite** to build a working notes app where you can create, read, update, and delete records through a browser.
 
-```bash
-pip install flask
+---
+
+## What you will learn
+
+This app shows how a simple full-stack web app connects all its parts:
+
+| Layer | Technology |
+|---|---|
+| Browser | HTML pages |
+| Presentation | CSS styling |
+| Client-side behaviour | JavaScript |
+| Server-side logic | Flask routes |
+| Dynamic pages | Jinja templates |
+| Data storage | SQLite database |
+
+---
+
+## 1. Fork the repository
+
+Forking creates your own copy of the project on GitHub so your changes are separate from the teacher's original.
+
+1. Sign in to [github.com](https://github.com).
+2. Open the repository page.
+3. Click the **Fork** button near the top right.
+4. Keep the default settings and click **Create fork**.
+
+You now have your own copy at `https://github.com/YOUR-USERNAME/skeletor`. Changes you make here will not affect the original.
+
+---
+
+## 2. Create a GitHub projects folder
+
+Before cloning, create a dedicated folder on your computer where all your GitHub repositories will live. A good location is:
+
+```
+Documents/GitHub
 ```
 
-## Run the app
+Keeping all repositories in one place makes them easy to find and manage.
+
+---
+
+## 3. Clone the repository
+
+Cloning downloads your fork to your computer. Open a terminal and run:
+
+```bash
+cd Documents/GitHub
+git clone https://github.com/YOUR-USERNAME/skeletor.git
+```
+
+Replace `YOUR-USERNAME` with your GitHub username.
+
+`git clone` creates the `skeletor` folder automatically — do not create it yourself first.
+
+---
+
+## 4. Open the project in VS Code
+
+Open VS Code from the `GitHub` folder rather than navigating into the project first:
+
+```bash
+cd Documents/GitHub
+code skeletor
+```
+
+This is the cleanest approach and avoids unnecessary directory changes.
+
+> **School machines:** If the `code` command is blocked, open VS Code manually, choose **File → Open Folder**, and select the `skeletor` folder.
+
+---
+
+## 5. Create a Python virtual environment
+
+A virtual environment is a private copy of Python for this project. Packages you install here will not affect other projects.
+
+**Windows PowerShell:**
+
+```powershell
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+```
+
+**macOS / Linux:**
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+When the virtual environment is active, your terminal prompt will start with `(.venv)`.
+
+---
+
+## 6. Install requirements
+
+```bash
+pip install -r requirements.txt
+```
+
+This installs Flask and any other packages the app needs.
+
+---
+
+## 7. Initialise the database
+
+The database is created automatically the first time you run the app. To reset it at any point, run:
+
+```bash
+flask --app app init-db
+```
+
+This recreates the `notes` table using `schema.sql`.
+
+---
+
+## 8. Run the app
 
 ```bash
 python app.py
 ```
 
-Then open `http://127.0.0.1:5000`.
+Then open the URL shown in the terminal — usually:
 
-## What each file is for
+```
+http://127.0.0.1:5000
+```
 
-- `/app.py` - Flask routes, form handling, validation, SQLite queries, and database setup
-- `/schema.sql` - SQL to create the single `notes` table
-- `/static/style.css` - simple page styling
-- `/static/script.js` - small client-side JavaScript to confirm deletes
-- `/static/img/logo.png` - logo image file requested by the browser on each page
-- `/templates/base.html` - shared page layout used by all templates
-- `/templates/index.html` - shows notes read from the database
-- `/templates/add.html` - form for inserting a new note
-- `/templates/edit.html` - form for updating an existing note
-- `/README.md` - setup instructions and concept mapping
+---
 
-## JavaScript in `static/script.js`
+## 9. Make your first change
 
-Students should use `script.js` to learn these browser-side ideas:
+Try one of these to get started:
 
-- selecting elements from the DOM with `document.querySelectorAll()`
-- looping through matching elements with a `for...of` loop
-- adding an event listener with `addEventListener()`
-- handling a `submit` event from a form
-- using `window.confirm()` to ask the user to confirm an action
-- using `event.preventDefault()` to stop the browser sending a form
-- understanding that JavaScript runs in the browser, while Flask runs on the server
-- understanding that client-side behaviour can improve usability, but server-side validation is still essential
+- **Change the site title** — open `templates/base.html` and edit the `<h1>` tag.
+- **Change a colour** — open `static/style.css` and change `background-color: #f5f7fb` on the `body` rule.
+- **Add a note** — click **Add note** in the browser and fill in the form.
 
-The script only confirms deletions. It does not replace Flask validation and it does not add extra interface features.
+---
 
-## CSS in `static/style.css`
+## Project structure
 
-Students should use `style.css` to identify these CSS ideas:
+```
+app.py            Flask routes, form handling, validation, SQLite queries
+schema.sql        SQL to create the notes table
+requirements.txt  Python packages required to run the app
+static/
+  style.css       Page styling
+  script.js       Client-side JavaScript (delete confirmation, character counter)
+  img/            Images served by Flask
+templates/
+  base.html       Shared page layout
+  index.html      Lists all notes
+  add.html        Form to add a new note
+  edit.html       Form to edit an existing note
+docs/             Beginner guides for each technology used
+```
 
-- **element selectors** such as `body`, `label`, `input`, and `textarea`
-- **class selectors** such as `.page`, `.button`, `.card`, and `.note-form`
-- **id selectors** such as `#content`
-- **grouped selectors** such as `h1, h2, p` and `.button, button`
-- **colour and presentation properties** including `color` and `background-color`
-- **text styling properties** including `font-family` and `font-size`
-- **box model properties** including `width`, `height`, `padding`, `margin`, and `max-width`
-- **border properties** including `border-style`, `border-width`, and `border-color`
+---
 
-CSS is separated from HTML so that the HTML can describe the structure and content of the page, while the CSS controls how that content is presented in the browser.
+## Further help
 
-This means the appearance of the page can be changed without changing the actual text, form fields, links, or page structure.
+| File | What it covers |
+|---|---|
+| [docs/html.md](docs/html.md) | Page structure and forms |
+| [docs/css.md](docs/css.md) | Styling and layout |
+| [docs/javascript.md](docs/javascript.md) | Client-side behaviour |
+| [docs/flask.md](docs/flask.md) | Routes and server-side Python |
+| [docs/jinja.md](docs/jinja.md) | Templates and dynamic pages |
+| [docs/sqlite.md](docs/sqlite.md) | Simple SQL database storage |
 
-The stylesheet in this project is deliberately simple so students can match visible parts of the interface to the CSS rules that control them.
-
-## Static assets and the logo
-
-- Static assets are files such as CSS, JavaScript, and images that are sent to the browser as files instead of being rendered as templates.
-- Images belong in `/static` so they can be requested directly by URL (for example `/static/img/logo.png`).
-- Flask serves files in the `static` folder automatically, so templates can link to them with `url_for('static', filename='...')`.
-- The logo is rendered in `templates/base.html` with `<img src="{{ url_for('static', filename='img/logo.png') }}">`, so it appears on every page that extends `base.html`.
-
-## OCR A-Level Computer Science links
-
-- **Browser**: displays the HTML, CSS, and JavaScript
-- **HTTP GET**: used when requesting pages such as `/` and `/add`
-- **HTTP POST**: used when submitting add, edit, and delete forms
-- **Flask routes**: receive requests and choose what should happen next
-- **Jinja templates**: turn Python data into HTML pages
-- **SQLite**: stores the revision notes in a table
-- **CRUD**: create, read, update, and delete notes through the web interface
-
-## What the app demonstrates
-
-- routing
-- GET and POST requests
-- form handling
-- server-side validation
-- template inheritance
-- parameterised SQL queries
-- database-driven page rendering
