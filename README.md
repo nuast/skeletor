@@ -8,14 +8,6 @@ This project is a tiny full-stack Flask app for OCR A-Level Computer Science stu
 pip install flask
 ```
 
-## Initialise the database
-
-The app can create `notes.db` automatically on first run, or you can initialise it yourself from `schema.sql`:
-
-```bash
-python -c "from app import init_db; init_db()"
-```
-
 ## Run the app
 
 ```bash
@@ -58,6 +50,7 @@ Students should use `style.css` to identify these CSS ideas:
 
 - **element selectors** such as `body`, `label`, `input`, and `textarea`
 - **class selectors** such as `.page`, `.button`, `.card`, and `.note-form`
+- **id selectors** such as `#content`
 - **grouped selectors** such as `h1, h2, p` and `.button, button`
 - **colour and presentation properties** including `color` and `background-color`
 - **text styling properties** including `font-family` and `font-size`
